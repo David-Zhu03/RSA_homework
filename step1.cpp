@@ -117,28 +117,3 @@ int main() {
     std::cout << "All BigNumber <=> OpenSSL tests passed.\n";
     return 0;
 }
-
-// ### **运行测试样例**
-
-// 我们设计了一组测试样例，比较自定义 `BigNumber` 类与 OpenSSL `BIGNUM` 在以下操作上的结果是否一致：
-
-// * 加法、减法、乘法、除法、取模
-// * 模幂运算 `powmod`
-// * 模逆运算 `modinv`
-
-// 每个操作使用一对数字输入，通过 `BigNumber` 和 `OpenSSL` 分别计算，最终对比输出字符串是否一致。
-
-// ---
-
-// ### **测试方法**
-
-// * 使用 `openssl/bn.h` 提供的 `BN_add`, `BN_mul`, `BN_mod_exp` 等函数进行高精度计算；
-// * 用断言 `assert(BigNumber结果 == OpenSSL结果)` 验证一致性；
-// * 所有操作封装成统一的测试函数，可扩展自动化回归测试。
-
-// ---
-
-// ### **结果说明**
-
-// 运行所有测试后，`BigNumber` 的运算结果与 OpenSSL 完全一致，表明大数运算逻辑正确，满足精度与功能需求。终端输出显示各项测试均 `[PASS]`，无断言失败，验证通过。
-

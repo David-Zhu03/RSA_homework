@@ -14,11 +14,5 @@ int main() {
     std::chrono::duration<double> elapsed_seconds = end - start;
 
     std::cout << "Generated RSA " << bits << "-bit key pair in " << elapsed_seconds.count() << " seconds." << std::endl;
-
-    // 可选打印公钥私钥，方便确认
-    // std::cout << "e: " << e.toString() << std::endl;
-    // std::cout << "d: " << d.toString() << std::endl;
-    // std::cout << "n: " << n.toString() << std::endl;
-
     return 0;
 }

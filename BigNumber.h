@@ -44,10 +44,6 @@ private:
     static BigNumber absMultiply(const BigNumber& a, const BigNumber& b);
 };
 
-// BarrettReducer.h
-#pragma once
-#include "BigNumber.h"
-
 struct BarrettReducer {
     BigNumber modulus;
     BigNumber mu;

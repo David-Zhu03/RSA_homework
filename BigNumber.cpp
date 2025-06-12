@@ -303,7 +303,6 @@ void BigNumber::rightShift1() {
     removeLeadingZeros();
 }
 
-// BigNumber.cpp 中实现：
 BigNumber BigNumber::rightShiftDecimal(int n) const {
     if (n >= digits.size()) return BigNumber(0);
     BigNumber result;

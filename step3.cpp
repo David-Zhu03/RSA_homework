@@ -8,17 +8,12 @@ void testRSA(const std::string& message, const BigNumber& e, const BigNumber& d,
     std::cout << "测试消息: " << message << std::endl;
 
     try {
-        // 加密解密测试
         auto ciphertexts = rsaEncryptChunks(message, e, n, keyBits);
         std::string decrypted = rsaDecryptChunks(ciphertexts, d, n);
-
         std::cout << "解密后: " << decrypted << std::endl;
         std::cout << (message == decrypted ? "加密解密测试成功！" : "加密解密测试失败！") << std::endl;
-
-        // 签名验签测试
         auto signature = rsaSignChunks(message, d, n, keyBits);
         bool verified = rsaVerifyChunks(message, signature, e, n);
-
         std::cout << (verified ? "签名验签测试成功！" : "签名验签测试失败！") << std::endl;
     } catch (const std::exception& ex) {
         std::cout << "测试过程中出现异常: " << ex.what() << std::endl;
@@ -35,7 +30,6 @@ int main() {
     generateRSAKeyPair(keyBits, e, d, n);
     std::cout << "生成完成！" << std::endl << std::endl;
 
-    // 多组测试样例
     std::vector<std::string> testMessages = {
         "Hello, RSA encryption and signing!",                     // 简单英文
         "0123456789ABCDEF0123456789ABCDEF",                       // 16进制字符串

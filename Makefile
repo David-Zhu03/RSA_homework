@@ -24,7 +24,7 @@ step3_test: step3.cpp $(COMMON_SRC) $(KEYGEN_SRC) $(RSA_SRC)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 step4_test: step4.cpp $(COMMON_SRC) $(KEYGEN_SRC)
-	$(CXX) -std=c++17 -O3 -flto -march=native $^ -o $@
+	$(CXX) -std=c++17 -O3  -DNDEBUG -flto -march=native $^ -o $@
 
 test: all
 	@echo "Running step1_test..."
